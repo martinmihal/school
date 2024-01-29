@@ -1,4 +1,8 @@
 
+
+install.packages('foreach')
+library("foreach")
+
 library("reticulate")
 #Sys.setenv(RETICULATE_PYTHON = "/myenv/bin/python")
 #
