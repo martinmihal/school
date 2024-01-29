@@ -1,3 +1,19 @@
+
+library("reticulate")
+#Sys.setenv(RETICULATE_PYTHON = "/myenv/bin/python")
+#
+use_virtualenv('../myenv', required=TRUE)
+py_install("numpy", pip = TRUE)
+py_install("nevergrad", pip = TRUE)
+
+
+print(reticulate::py_module_available("nevergrad"))
+
+#reticulate::virtualenv_create(
+#  envname = "r-reticulate",
+#)
+#reticulate::use_virtualenv("r-reticulate")
+py_install("nevergrad", pip = TRUE)
 # Copyright (c) Meta Platforms, Inc. and its affiliates.
 
 # This source code is licensed under the MIT license found in the
