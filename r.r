@@ -360,8 +360,8 @@ print(OutputCollect)
 select_model <- "1_122_7" # Pick one of the models from OutputCollect to proceed
 
 #### Version >=3.7.1: JSON export and import (faster and lighter than RDS files)
-ExportedModel <- robyn_write(InputCollect, OutputCollect, select_model, export = create_files)
-print(ExportedModel)
+#ExportedModel <- robyn_write(InputCollect, OutputCollect, select_model, export = create_files)
+#print(ExportedModel)
 
 # To plot any model's one-pager:
 myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export = TRUE)
@@ -378,7 +378,7 @@ myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export 
 ## Don't interpret budget allocation result if selected model above doesn't meet business expectation.
 
 # Check media summary for selected model
-print(ExportedModel)
+#print(ExportedModel)
 
 # Run ?robyn_allocator to check parameter definition
 
