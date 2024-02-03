@@ -403,7 +403,7 @@ select_model <- "1_92_1" # Pick one of the models from OutputCollect to proceed
 #print(ExportedModel)
 
 # To plot any model's one-pager:
-myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export = TRUE)
+#myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export = TRUE)
 
 # To check each of the one-pager's plots
 # myOnePager[[select_model]]$patches$plots[[1]]
