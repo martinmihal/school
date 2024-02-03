@@ -84,8 +84,8 @@ head(dt_simulated_weekly)
 ## Check holidays from Prophet
 # 59 countries included. If your country is not included, please manually add it.
 # Tipp: any events can be added into this table, school break, events etc.
-data("dt_prophet_holidays")
-head(dt_prophet_holidays)
+#data("dt_prophet_ys")
+#head(dt_prophet_hoholidalidays)
 
 # Directory where you want to export results to (will create new folders)
 robyn_directory <- "~/Desktop"
@@ -95,16 +95,16 @@ robyn_directory <- "~/Desktop"
 
 #### 2a-1: First, specify input variables
 
-
 # date,revenue,c,fb_paid_spend,google_paid_total_impressions,google_paid_spend,pinterest_paid_total_impressions,pinterest_paid_spend,mountain_paid_total_impressions,mountain_paid_spend,fb_organic_total_impressions,instagram_organic_total_impressions,google_organic_total_impressions
 
 ## All sign control are now automatically provided: "positive" for media & organic
 ## variables and "default" for all others. User can still customise signs if necessary.
 ## Documentation is available, access it anytime by running: ?robyn_inputs
+
+#   dt_holidays = dt_prophet_holidays,
 InputCollect <- robyn_inputs(
   dt_input = dt_simulated_weekly,
-  dt_holidays = dt_prophet_holidays,
-  date_var = "DATE", # date format must be "2020-01-01"
+  date_var = "date", # date format must be "2020-01-01"
   dep_var = "revenue", # there should be only one dependent variable
   dep_var_type = "revenue", # "revenue" (ROI) or "conversion" (CPA)
   prophet_vars = c("trend", "season", "holiday"), # "trend","season", "weekday" & "holiday"
