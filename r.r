@@ -422,8 +422,34 @@ AllocatorCollect1 <- robyn_allocator(
   channel_constr_up = 1.4   ,
   # channel_constr_multiplier = 3,
   scenario = "max_response",
-  export = create_files
+  export = create_files,
+  date_min = "2024-01-29",
+  date_max = "2024-01-15",
 )
 # Print & plot allocator's output
 print(AllocatorCollect1)
 plot(AllocatorCollect1)
+
+
+allocation_result <- AllocatorCollect1$dt_optimOut[
+    ,
+    c(
+      'channels',
+      'initSpendUnitTotal',
+      'initSpendUnit',
+      'initRoiUnit',
+      'initResponseUnit',
+      'initResponseUnitTotal',
+      'optmSpendUnit',
+      'optmResponseUnitTotal',
+      'optmResponseUnit',
+      'optmRoiUnit'
+    )
+  ]
+
+print("-------------------")
+print("-------------------")
+print("-------------------")
+print("-------------------")
+
+print(allocation_result)
