@@ -217,7 +217,7 @@ hyperparameters <- list(
   fb_organic_total_impressions_alphas = c(0.5, 3),
   fb_organic_total_impressions_gammas = c(0.3, 1),
   fb_organic_total_impressions_thetas = c(0, 0.3),
-  
+
   train_size = c(0.5, 0.8)
 )
 
@@ -374,7 +374,7 @@ print(OutputCollect)
 
 ## Compare all model one-pagers and select one that mostly reflects your business reality
 print(OutputCollect)
-select_model <- "2_65_1" # Pick one of the models from OutputCollect to proceed
+select_model <- "1_92_1" # Pick one of the models from OutputCollect to proceed
 
 #### Version >=3.7.1: JSON export and import (faster and lighter than RDS files)
 #ExportedModel <- robyn_write(InputCollect, OutputCollect, select_model, export = create_files)
