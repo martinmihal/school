@@ -111,7 +111,7 @@ InputCollect <- robyn_inputs(
   prophet_country = "US", # input country code. Check: dt_prophet_holidays
   context_vars = c(), # e.g. competitors, discount, unemployment etc
   paid_media_spends = c("fb_paid_spend", "google_paid_spend", "pinterest_paid_spend","mountain_paid_spend"), # mandatory input
-  paid_media_vars = c("fb_paid_total_impressions", "google_paid_total_impressions" "pinterest_paid_total_impressions". "mountain_paid_total_impressions"), # mandatory.
+  paid_media_vars = c("fb_paid_total_impressions", "google_paid_total_impressions" "pinterest_paid_total_impressions", "mountain_paid_total_impressions"), # mandatory.
   # paid_media_vars must have same order as paid_media_spends. Use media exposure metrics like
   # impressions, GRP etc. If not applicable, use spend instead.
   organic_vars = "fb_organic_total_impressions", # marketing activity without media spend
