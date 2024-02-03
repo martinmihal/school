@@ -206,7 +206,6 @@ hyper_limits()
 
 # Example hyperparameters ranges for Geometric adstock
 hyperparameters <- list(
-fb_paid_spend", "google_paid_spend"
   fb_paid_spend_alphas = c(0.5, 3),
   fb_paid_spend_gammas = c(0.3, 1),
   fb_paid_spend_thetas = c(0, 0.3),
