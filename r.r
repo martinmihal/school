@@ -343,6 +343,15 @@ OutputModels <- robyn_run(
   ts_validation = TRUE, # 3-way-split time series for NRMSE validation.
   add_penalty_factor = FALSE # Experimental feature. Use with caution.
 )
+meta_top_models <- data.frame(read.csv(paste0(output$plot_folder, '/pareto_clusters.csv'), row.names=1))
+meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
+
+
+print("---------")
+
+print(meta_top_models)
+exit()
+
 print(OutputModels)
 
 ## Check MOO (multi-objective optimization) convergence plots
@@ -417,10 +426,9 @@ AllocatorCollect1 <- robyn_allocator(
   OutputCollect = OutputCollect,
   select_model = select_model,
   # date_range = "all", # Default to "all"
-  # total_budget = NULL, # When NULL, default is total spend in date_range
+  # x = NULL, # When NULL, default is total spend in date_range
   channel_constr_low = 0.7,
   channel_constr_up = 1.4   ,
-  # channel_constr_multiplier = 3,
   scenario = "max_response",
   export = create_files,
   date_min = "2024-01-29",
