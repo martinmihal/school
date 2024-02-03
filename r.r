@@ -1,6 +1,6 @@
 
 # Set the file path to your CSV file
-file_path <- "usa_gavin_mmm_input"
+file_path <- "usa_gavin_mmm_input.csv"
 
 # Load the CSV file using read.csv()
 data <- read.csv(file_path)
