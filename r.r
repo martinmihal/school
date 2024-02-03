@@ -213,6 +213,11 @@ hyperparameters <- list(
   google_paid_spend_alphas = c(0.5, 3),
   google_paid_spend_gammas = c(0.3, 1),
   google_paid_spend_thetas = c(0, 0.3),
+
+  fb_organic_total_impressions_alphas = c(0.5, 3),
+  fb_organic_total_impressions_gammas = c(0.3, 1),
+  fb_organic_total_impressions_thetas = c(0, 0.3),
+  
   train_size = c(0.5, 0.8)
 )
 
