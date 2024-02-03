@@ -73,6 +73,9 @@ create_files <- TRUE
 file_path <- "usa_gavin_mmm_input.csv"
 # Load the CSV file using read.csv()
 dt_simulated_weekly <- read.csv(file_path)
+# replace missing values in R with 0
+dt_simulated_weekly[is.na(dt_simulated_weekly)] <- 0
+
 # Check the first few rows of the data
 head(dt_simulated_weekly)
 
