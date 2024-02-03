@@ -62,8 +62,10 @@ create_files <- TRUE
 #### Step 1: Load data
 
 ## Check simulated dataset or load your own dataset
+
 data("dt_simulated_weekly")
 head(dt_simulated_weekly)
+exit()
 
 ## Check holidays from Prophet
 # 59 countries included. If your country is not included, please manually add it.
