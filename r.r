@@ -206,24 +206,14 @@ hyper_limits()
 
 # Example hyperparameters ranges for Geometric adstock
 hyperparameters <- list(
-  facebook_S_alphas = c(0.5, 3),
-  facebook_S_gammas = c(0.3, 1),
-  facebook_S_thetas = c(0, 0.3),
-  print_S_alphas = c(0.5, 3),
-  print_S_gammas = c(0.3, 1),
-  print_S_thetas = c(0.1, 0.4),
-  tv_S_alphas = c(0.5, 3),
-  tv_S_gammas = c(0.3, 1),
-  tv_S_thetas = c(0.3, 0.8),
-  search_S_alphas = c(0.5, 3),
-  search_S_gammas = c(0.3, 1),
-  search_S_thetas = c(0, 0.3),
-  ooh_S_alphas = c(0.5, 3),
-  ooh_S_gammas = c(0.3, 1),
-  ooh_S_thetas = c(0.1, 0.4),
-  newsletter_alphas = c(0.5, 3),
-  newsletter_gammas = c(0.3, 1),
-  newsletter_thetas = c(0.1, 0.4),
+fb_paid_spend", "google_paid_spend"
+  fb_paid_spend_alphas = c(0.5, 3),
+  fb_paid_spend_gammas = c(0.3, 1),
+  fb_paid_spend_thetas = c(0, 0.3),
+
+  google_paid_spend_alphas = c(0.5, 3),
+  google_paid_spend_gammas = c(0.3, 1),
+  google_paid_spend_thetas = c(0, 0.3),
   train_size = c(0.5, 0.8)
 )
 
