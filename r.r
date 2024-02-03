@@ -110,12 +110,11 @@ InputCollect <- robyn_inputs(
   prophet_vars = c("trend", "season", "holiday"), # "trend","season", "weekday" & "holiday"
   prophet_country = "US", # input country code. Check: dt_prophet_holidays
   context_vars = c(), # e.g. competitors, discount, unemployment etc
-  paid_media_spends = c("fb_paid_spend", "google_paid_spend"), # mandatory input
-  paid_media_vars = c("fb_paid_total_impressions", "google_paid_total_impressions"), # mandatory.
+  paid_media_spends = c("fb_paid_spend", "google_paid_spend", "pinterest_paid_spend","mountain_paid_spend"), # mandatory input
+  paid_media_vars = c("fb_paid_total_impressions", "google_paid_total_impressions" "pinterest_paid_total_impressions". "mountain_paid_total_impressions"), # mandatory.
   # paid_media_vars must have same order as paid_media_spends. Use media exposure metrics like
   # impressions, GRP etc. If not applicable, use spend instead.
   organic_vars = "fb_organic_total_impressions", # marketing activity without media spend
-  # factor_vars = c("events"), # force variables in context_vars or organic_vars to be categorical
   window_start = "2022-04-28",
   window_end = "2024-01-29",
   adstock = "geometric" # geometric, weibull_cdf or weibull_pdf.
@@ -213,6 +212,14 @@ hyperparameters <- list(
   google_paid_spend_alphas = c(0.5, 3),
   google_paid_spend_gammas = c(0.3, 1),
   google_paid_spend_thetas = c(0, 0.3),
+
+  pinterest_paid_spend_alphas = c(0.5, 3),
+  pinterest_paid_spend_gammas = c(0.3, 1),
+  pinterest_paid_spend_thetas = c(0, 0.3),
+
+  mountain_paid_spend_alphas = c(0.5, 3),
+  mountain_paid_spend_gammas = c(0.3, 1),
+  mountain_paid_spend_thetas = c(0, 0.3),
 
   fb_organic_total_impressions_alphas = c(0.5, 3),
   fb_organic_total_impressions_gammas = c(0.3, 1),
@@ -412,7 +419,7 @@ AllocatorCollect1 <- robyn_allocator(
   # date_range = "all", # Default to "all"
   # total_budget = NULL, # When NULL, default is total spend in date_range
   channel_constr_low = 0.7,
-  channel_constr_up = 1.3,
+  channel_constr_up = 1.4   ,
   # channel_constr_multiplier = 3,
   scenario = "max_response",
   export = create_files
