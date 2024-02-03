@@ -402,6 +402,7 @@ myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export 
 # NOTE: The order of constraints should follow:
 InputCollect$paid_media_spends
 
+print("LAAAAAAAAAAAAAAAAAAAAAAAAAAST")
 # Scenario "max_response": "What's the max. return given certain spend?"
 # Example 1: max_response default setting: maximize response for latest month
 AllocatorCollect1 <- robyn_allocator(
@@ -411,7 +412,7 @@ AllocatorCollect1 <- robyn_allocator(
   # date_range = "all", # Default to "all"
   # total_budget = NULL, # When NULL, default is total spend in date_range
   channel_constr_low = 0.7,
-  channel_constr_up = c(1.2, 1.5, 1.5, 1.5, 1.5),
+  channel_constr_up = 1.3,
   # channel_constr_multiplier = 3,
   scenario = "max_response",
   export = create_files
