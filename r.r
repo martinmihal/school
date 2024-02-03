@@ -114,7 +114,7 @@ InputCollect <- robyn_inputs(
   paid_media_vars = c("fb_paid_total_impressions", "google_paid_total_impressions", "pinterest_paid_total_impressions", "mountain_paid_total_impressions"), # mandatory.
   # paid_media_vars must have same order as paid_media_spends. Use media exposure metrics like
   # impressions, GRP etc. If not applicable, use spend instead.
-  organic_vars = c("fb_organic_total_impressions", "instagram_organic_total_impressions", "google_organic_total_impressions"), # marketing activity without media spend
+  organic_vars = ("fb_organic_total_impressions", "instagram_organic_total_impressions", "google_organic_total_impressions"), # marketing activity without media spend
   window_start = "2022-04-28",
   window_end = "2024-01-29",
   adstock = "geometric" # geometric, weibull_cdf or weibull_pdf.
@@ -351,12 +351,16 @@ OutputModels <- robyn_run(
   ts_validation = TRUE, # 3-way-split time series for NRMSE validation.
   add_penalty_factor = FALSE # Experimental feature. Use with caution.
 )
-#output <- robyn_outputs(InputCollect, OutputModels, clusters=TRUE)
-#meta_top_models <- data.frame(read.csv(paste0(output$plot_folder, '/pareto_clusters.csv'), row.names=1))
-#meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
+output <- robyn_outputs(InputCollect, OutputModels, clusters=TRUE)
+
+meta_top_models <- data.frame(read.csv(paste0(output$plot_folder, '/pareto_clusters.csv'), row.names=1))
+meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
+
+
 print("---------")
-#print(meta_top_models)
-#exit()
+
+print(meta_top_models)
+exit()
 
 print(OutputModels)
 
@@ -403,7 +407,7 @@ select_model <- "1_92_1" # Pick one of the models from OutputCollect to proceed
 #print(ExportedModel)
 
 # To plot any model's one-pager:
-#myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export = TRUE)
+myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export = TRUE)
 
 # To check each of the one-pager's plots
 # myOnePager[[select_model]]$patches$plots[[1]]
