@@ -1,4 +1,13 @@
 
+# Set the file path to your CSV file
+file_path <- "usa_gavin_mmm_input"
+
+# Load the CSV file using read.csv()
+data <- read.csv(file_path)
+# Check the first few rows of the data
+head(data)
+
+exit()
 
 install.packages('foreach')
 library("foreach")
@@ -12,6 +21,9 @@ py_install("nevergrad", pip = TRUE)
 
 
 print(reticulate::py_module_available("nevergrad"))
+
+
+
 
 #reticulate::virtualenv_create(
 #  envname = "r-reticulate",
