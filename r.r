@@ -343,6 +343,8 @@ OutputModels <- robyn_run(
   ts_validation = TRUE, # 3-way-split time series for NRMSE validation.
   add_penalty_factor = FALSE # Experimental feature. Use with caution.
 )
+output <- robyn_outputs(InputCollect, OutputModels, clusters=TRUE)
+
 meta_top_models <- data.frame(read.csv(paste0(output$plot_folder, '/pareto_clusters.csv'), row.names=1))
 meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
 
