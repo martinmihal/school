@@ -76,8 +76,6 @@ dt_simulated_weekly <- read.csv(file_path)
 # Check the first few rows of the data
 head(dt_simulated_weekly)
 
-exit()
-
 
 
 ## Check holidays from Prophet
@@ -94,6 +92,9 @@ robyn_directory <- "~/Desktop"
 
 #### 2a-1: First, specify input variables
 
+
+# date,revenue,c,fb_paid_spend,google_paid_total_impressions,google_paid_spend,pinterest_paid_total_impressions,pinterest_paid_spend,mountain_paid_total_impressions,mountain_paid_spend,fb_organic_total_impressions,instagram_organic_total_impressions,google_organic_total_impressions
+
 ## All sign control are now automatically provided: "positive" for media & organic
 ## variables and "default" for all others. User can still customise signs if necessary.
 ## Documentation is available, access it anytime by running: ?robyn_inputs
@@ -104,10 +105,10 @@ InputCollect <- robyn_inputs(
   dep_var = "revenue", # there should be only one dependent variable
   dep_var_type = "revenue", # "revenue" (ROI) or "conversion" (CPA)
   prophet_vars = c("trend", "season", "holiday"), # "trend","season", "weekday" & "holiday"
-  prophet_country = "DE", # input country code. Check: dt_prophet_holidays
-  context_vars = c("competitor_sales_B", "events"), # e.g. competitors, discount, unemployment etc
-  paid_media_spends = c("tv_S", "ooh_S", "print_S", "facebook_S", "search_S"), # mandatory input
-  paid_media_vars = c("tv_S", "ooh_S", "print_S", "facebook_I", "search_clicks_P"), # mandatory.
+  prophet_country = "USA", # input country code. Check: dt_prophet_holidays
+  context_vars = c(), # e.g. competitors, discount, unemployment etc
+  paid_media_spends = c("fb_paid_spend", "google_paid_spend"), # mandatory input
+  paid_media_vars = c("fb_paid_total_impressions", "google_paid_total_impressions"), # mandatory.
   # paid_media_vars must have same order as paid_media_spends. Use media exposure metrics like
   # impressions, GRP etc. If not applicable, use spend instead.
   organic_vars = "newsletter", # marketing activity without media spend
