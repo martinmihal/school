@@ -1,13 +1,4 @@
 
-# Set the file path to your CSV file
-file_path <- "usa_gavin_mmm_input.csv"
-
-# Load the CSV file using read.csv()
-data <- read.csv(file_path)
-# Check the first few rows of the data
-head(data)
-
-exit()
 
 install.packages('foreach')
 library("foreach")
@@ -75,9 +66,19 @@ create_files <- TRUE
 
 ## Check simulated dataset or load your own dataset
 
-data("dt_simulated_weekly")
+#data("dt_simulated_weekly")
+#head(dt_simulated_weekly)
+
+# Set the file path to your CSV file
+file_path <- "usa_gavin_mmm_input.csv"
+# Load the CSV file using read.csv()
+dt_simulated_weekly <- read.csv(file_path)
+# Check the first few rows of the data
 head(dt_simulated_weekly)
+
 exit()
+
+
 
 ## Check holidays from Prophet
 # 59 countries included. If your country is not included, please manually add it.
