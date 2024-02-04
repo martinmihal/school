@@ -413,7 +413,7 @@ select_model <- best_model_id # Pick one of the models from OutputCollect to pro
 #print(ExportedModel)
 
 # To plot any model's one-pager:
-myOnePager <- robyn_onepagers(InputCollect, OutputModels, select_model, export = TRUE)
+#myOnePager <- robyn_onepagers(InputCollect, OutputCollect, select_model, export = TRUE)
 
 # To check each of the one-pager's plots
 # myOnePager[[select_model]]$patches$plots[[1]]
