@@ -361,16 +361,18 @@ meta_top_models_ordered <- meta_top_models[order(meta_top_models$nrmse_test), ]
 print("order")
 print(meta_top_models_ordered)
 
-best_model_by_metric <- meta_top_models_ordered[, 1]
+best_model_by_metric <- meta_top_models_ordered[1, ]
+best_model_id <- best_model_by_metric$solID
+
+print("best_model_id")
+print(best_model_id)
+exit()  
+
 print("best row")
 print(best_model_by_metric)
 print("tool")
 print(best_model_by_metric[1])
 print(best_model_by_metric[2])
-#best_model_id <- best_model_by_metric$solID
-
-#print("best_model_id")
-#print(best_model_id)
 
 exit()
 meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
