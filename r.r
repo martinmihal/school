@@ -366,24 +366,7 @@ best_model_id <- best_model_by_metric$solID
 
 print("best_model_id")
 print(best_model_id)
-exit()  
 
-print("best row")
-print(best_model_by_metric)
-print("tool")
-print(best_model_by_metric[1])
-print(best_model_by_metric[2])
-
-exit()
-meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
-
-
-print("---------")
-
-print(meta_top_models)
-print("***")
-
-exit()
 
 print(OutputModels)
 
@@ -423,7 +406,7 @@ print(OutputCollect)
 
 ## Compare all model one-pagers and select one that mostly reflects your business reality
 print(OutputCollect)
-select_model <- "1_92_1" # Pick one of the models from OutputCollect to proceed
+select_model <- best_model_id # Pick one of the models from OutputCollect to proceed
 
 #### Version >=3.7.1: JSON export and import (faster and lighter than RDS files)
 #ExportedModel <- robyn_write(InputCollect, OutputCollect, select_model, export = create_files)
