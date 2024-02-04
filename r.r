@@ -354,6 +354,9 @@ OutputModels <- robyn_run(
 output <- robyn_outputs(InputCollect, OutputModels, clusters=TRUE)
 
 meta_top_models <- data.frame(read.csv(paste0(output$plot_folder, '/pareto_clusters.csv'), row.names=1))
+print("&&&&&")
+print(meta_top_models)
+
 meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
 
 
