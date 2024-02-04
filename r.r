@@ -354,9 +354,14 @@ OutputModels <- robyn_run(
 output <- robyn_outputs(InputCollect, OutputModels, clusters=TRUE)
 
 meta_top_models <- data.frame(read.csv(paste0(output$plot_folder, '/pareto_clusters.csv'), row.names=1))
+
 print("&&&&&")
 print(meta_top_models)
+meta_top_models_ordered <- meta_top_models[order(meta_top_models$nrmse_test), ]
+print("order")
+print(meta_top_models_ordered)
 
+exit()
 meta_top_models <- filter(meta_top_models, meta_top_models$top_sol == TRUE)$solID
 
 
@@ -364,6 +369,7 @@ print("---------")
 
 print(meta_top_models)
 print("***")
+
 exit()
 
 print(OutputModels)
