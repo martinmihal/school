@@ -489,3 +489,4 @@ print("-------------------")
 print("-------------------")
 
 print(allocation_result)
+write.csv(allocation_result, file = "allocation_result.csv")
