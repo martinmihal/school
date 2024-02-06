@@ -439,15 +439,25 @@ InputCollect$paid_media_spends
 print("LAAAAAAAAAAAAAAAAAAAAAAAAAAST")
 # Scenario "max_response": "What's the max. return given certain spend?"
 # Example 1: max_response default setting: maximize response for latest month
+#AllocatorCollect1 <- robyn_allocator(
+#  InputCollect = InputCollect,
+#  OutputCollect = output,
+#  select_model = select_model,
+#  channel_constr_low = 0.7,
+#  channel_constr_up = 1.4   ,
+#  scenario = "max_response",
+#  export = create_files,
+#  date_min = "2024-01-29",
+#  date_max = "2024-01-15",
+#)
 AllocatorCollect1 <- robyn_allocator(
   InputCollect = InputCollect,
   OutputCollect = output,
   select_model = select_model,
-  # date_range = "all", # Default to "all"
-  # x = NULL, # When NULL, default is total spend in date_range
   channel_constr_low = 0.7,
   channel_constr_up = 1.4   ,
   scenario = "max_response",
+  total_budget=100000,
   export = create_files,
   date_min = "2024-01-29",
   date_max = "2024-01-15",
