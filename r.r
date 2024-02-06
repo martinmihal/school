@@ -357,7 +357,9 @@ meta_top_models <- data.frame(read.csv(paste0(output$plot_folder, '/pareto_clust
 
 print("&&&&&")
 print(meta_top_models)
-meta_top_models_ordered <- meta_top_models[order(meta_top_models$nrmse_test), ]
+
+meta_top_models_ordered <- meta_top_models[order(meta_top_models$nrmse), ]
+# meta_top_models_ordered <- meta_top_models[order(meta_top_models$nrmse_test), ]
 print("order")
 print(meta_top_models_ordered)
 
